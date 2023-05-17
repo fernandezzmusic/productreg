@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap5/css/bootstrap.min.css">
+    <title>Aula11</title>
+    <script type="text/javascript" src="scripts.js"></script>
+    <script type="text/javascript" src="jquery-3.7.0.min.js"></script>
+<style>
+
+ .mb-3{
+  background: rgb(233, 233, 233);
+  padding: 50px;
+
+ }
+ #produto{
+   width: auto;
+   height: 100px;
+  
+ }
+</style>
+
+</head>
+<body>
+  <nav class="navbar navbar-light bg-light p-4">
+    <a class="navbar-brand" href="#">Plugins</a>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="mb-3">
+            <label>Código</label>
+            <input type="text" class="form-control mt-3" id="codigo"  placeholder="Codigo">
+              
+            <label>Descrição</label>
+            <input type="text" class="form-control mt-3" id="desc"  placeholder="Descrição basica do produto">
+            
+            <label>Quantidade</label>
+            <input type="number" class="form-control mt-3" id="quant"  placeholder="Quantidade">
+              
+            <label>Valor</label>
+            <input type="number" class="form-control mt-3" id="valor"  placeholder="Valor">
+              
+            <button type="submit" class="btn btn-primary mt-3" id="btnCafastrar">Cadastrar</button>
+            <button class="btn btn-primary mt-3" id="btnLimpar">Limpar último</button>
+          </div>
+        </div>
+          <div class="col-md-6">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Código</th>
+                <th scope="col">Descrição</th>
+                <th scope="col">Quantidade</th>
+                <th scope="col">Valor</th>
+                <th scope="col">Alterar</th>
+              </tr>
+            </thead>
+            <tbody id = "tabela">
+                
+
+            </tbody>
+          </table>
+        </div>
+
+          
+
+        
+   
+  </div>
+</body>
+</html>
