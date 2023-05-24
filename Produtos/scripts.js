@@ -23,8 +23,13 @@ function montarTabela(lista)
                     '<td>' + lista[i].quantidade + '</td>'+
                     '<td>' + lista[i].valor.toFixed(2).replace('-',',') + '</td>'+
                     '<td>' + 
-                    '<a href = "#" class="btn btn-primary" rel="'+i+'">' +
+                    '<a href = "#" class="btn-primary" rel="'+i+'">' +
                         '<img src="img/edit.svg" width = "20px" rel="'+i+'"/>' +
+                    '</a>' +
+                    '</td>' +
+                    '<td>' + 
+                    '<a href = "#" class="btn-danger" rel="'+i+'">' +
+                        '<img src="img/delete.png" width = "50px" rel="'+i+'"/>' +
                     '</a>' +
                     '</td>' +
                     '<tr>';
@@ -44,6 +49,7 @@ function validar(valor)
     }
 }
 
+auxPosicao = '';
 listaProdutos = [];
 
 //atribuicao dos valores e produtos
@@ -70,7 +76,18 @@ window.onload = function()
        quantidade = parseFloat(quantidade);
        valor = parseFloat(valor);
        let novoProduto = new Produto(codigo, descricao, quantidade, valor);
-       listaProdutos.push(novoProduto);
+
+       if (auxPosicao == '')
+        {
+        listaProdutos.push(novoProduto);
+        }
+        
+        else
+        {
+        listaProdutos[auxPosicao] = novoProduto;
+        auxPosicao = '';
+        }
+
        document.getElementById('tabela').innerHTML = montarTabela(listaProdutos);
     }
     else
@@ -94,4 +111,29 @@ window.onload = function()
         $('#valor').val(listaProdutos[auxPosicao].valor);
     })
 
+    $('#tabela').on('click', '.btn-danger', (evento) =>
+    {
+        if(confirm('Tem certeza?'))
+        {
+            listaProdutos.splice(evento.target.getAttribute('rel'), 1);
+            $('#tabela').html(montarTabela(listaProdutos));
+        }
+    });
+
+    $('#btnJson').click(() =>
+    {
+        let produtosJson = JSON.stringify(listaProdutos);
+        alert(produtosJson);
+    });
+
+    $('#btnAjax').click(() =>
+    {
+        $.ajax({
+            url: "http://date.jsontest.com/",
+            method: 'GET',
+            dataType: 'json' 
+          }).done(function(dados) {
+            $('#data').html(dados);
+          });
+    });
 }
