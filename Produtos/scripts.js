@@ -133,7 +133,7 @@ window.onload = function()
             method: 'GET',
             dataType: 'json' 
           }).done(function(dados) {
-            $('#data').html(dados);
+            $('#data').html(dados.date);
           });
     });
 }
