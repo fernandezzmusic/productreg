@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Plugin Boutique</title>
+    <script type="text/javascript" src="scripts.js"></script>
+    <script type="text/javascript" src="jquery-3.7.0.min.js"></script>
+    <script src="DataTables/datatables.min.js"></script>
+    <link href="DataTables/datatables.min.css" rel="stylesheet"/>
+
+</head>
+<body>
+  <nav class="navbar bg-dark p-3 mb-5" data-bs-theme="dark">
+    <a class="navbar-brand" href="#"><img src="img/brand.png" width = 200px></a>
+  </nav>
+
+  <div class="container-sm" id="calctab">
+    <div class="row bg-dark bordaredonda">
+      <div class="col-md-6 p-3">
+        <div class="mb-3 bg-dark" id="calc">
+            <!--<label>Empresa</label>
+            <input type="text" class="form-control mt-3 mb-4 rounded-pill" id="codigo"> -->
+              
+            <label>VST</label>
+            <select class="form-control mt-3 mb-4 rounded-pill" id = "desc" name="option">
+            <option value="" disabled selected>Escolha</option>
+            <option value="1">NI Massive X</option>
+            <option value="2">iZotope Ozone</option>
+            <option value="3">Xfer Serum</option>
+            </select>
+            
+            <label>Quantidade</label>
+            <input type="number" class="form-control mt-3 mb-4 rounded-pill" id="quant">
+              
+            <label>Valor</label>
+            <input type="number" class="form-control mt-3 mb-4 rounded-pill" id="valor">
+              
+            <button type="submit" class="btn btn-primary mt-3  rounded-pill" id="btnCafastrar">Cadastrar</button>
+            <button class="btn btn-primary mt-3 rounded-pill" id="btnLimpar">Limpar último</button>
+          </div>
+        </div>
+          <div class="col-md-6 p-5 bg-dark bordaredonda border-start">
+          <table class="table table-dark">
+            <thead>
+              <tr>
+                <!--<th scope="col">Empresa</th>-->
+                <th scope="col">VST</th>
+                <th scope="col">Quantidade</th>
+                <th scope="col">Valor</th>
+                <th scope="col">Alterar</th>
+                <th scope="col">Excluir</th>
+              </tr>
+            </thead>
+            <tbody id = "tabela">
+                
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="container text-center bordaredonda bg-dark p-3 mt-5 mb-5" id = "precos">
+      <div class="row m-4">
+        <div class="col bordaredonda pt-3">
+          <img src="img/massive.jpg" width = "200px" class = "bordaredonda">
+          <br><br><h5>Native Instruments</h5>
+          <h4>Massive X</h4>
+          <br><p class="custo">R$ 420,00</p>
+        </div>
+        <div class="col bordaredonda pt-3">
+          <img src="img/serum.jpg" width = "200px" class = "bordaredonda">
+          <br><br><h5>Xfer Records</h5>
+          <h4>Serum</h4>
+          <br><p class="custo">R$ 450,00</p>
+        </div>
+        <div class="col bordaredonda pt-3">
+          <img src="img/ozone.png" width = "200px">
+          <br><br><h5>Izotope</h5>
+          <h4>Ozone</h4>
+          <br><p class="custo">R$ 300,00</p>
+        </div>
+      </div>
+
+    <br>
+    <p id="data"></p>
+    </div>
+
+    <footer class="container">
+			<p class="float-end"><a href="#">Voltar</a></p>
+			<p>Plugin Boutique</p>
+			<button id="btnJson" class="btn btn-primary">
+				<img src="img/json.png" alt="" width="50" height="50">
+				Gerar JSON</button>
+			<br />
+			<button id="btnAjax" class="btn btn-primary">Ajax</button>
+			<br />
+			<p id="data"></p>
+    
+</body>
+</html>

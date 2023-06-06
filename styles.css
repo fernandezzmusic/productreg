@@ -1,0 +1,71 @@
+.bordaredonda
+{
+    border-radius:30px;
+}
+
+#calc label
+{
+    color: #ffff
+}
+
+.mb-3{
+    padding: 50px;
+  
+}
+#produto{
+     width: auto;
+     height: 100px;
+    
+}
+
+.navbar-brand {
+    transform: translateX(-50%);
+    left: 50%;
+    position: relative;
+  }
+
+  body
+  {
+    background-image: url('img/bg.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-blend-mode: luminosity;
+  }
+
+  @keyframes transit
+  {
+    0%{opacity:0%; translate: 0px 50px}
+    100%{opacity:100%;}
+  }
+
+  #calctab
+  {
+    animation-name: transit;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+    position: relative;
+  }
+
+  .custo
+  {
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    color: #74d456;
+  }
+
+  h4, h5
+  {
+    color: white;
+  }
+
+  #precos
+  {
+    animation-name: transit;
+    animation-duration: 4s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    animation-play-state:initial;
+
+  }
